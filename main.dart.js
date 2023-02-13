@@ -33838,7 +33838,7 @@ this.b3()},
 I(a){var s,r,q,p=null,o=t.w,n=a.N(o).f.a,m=this.e,l=n.b,k=l*0.4
 this.f=m<k?m/k:1
 s=a.N(o).f.a.a<800?50:300
-if(a.N(o).f.a.a<800){m=A.rO("../assets/images/logo.png",p,40)
+if(a.N(o).f.a.a<800){m=A.rO("assets/images/logo.png",p,40)
 m=new A.qg(m,0,new A.R(4281629772),!0,new A.x9(p,p,1/0,56),p)}else m=new A.ue(new A.vK(p),new A.V(n.a,1000),p)
 k=A.bt(p,50,p)
 r=t.s
@@ -33855,7 +33855,7 @@ p=a.N(t.w).f.a.a<800?A.e_(A.a([A.r7(B.bF,s),A.bt(s,20,s),new A.lc("Email",r,s),A
 return A.ch(s,p,B.eL,s,s,s,new A.aw(30,30,30,30),s)}}
 A.r4.prototype={
 ae(){var s=t.s
-return new A.H5(new A.NP(new A.b2(new A.ae($.aa,t.dX),t.Fe)),[!1,!1,!1,!1,!1,!1,!1],[!0,!1,!1,!1,!1,!1,!1],A.a(["../assets/images/activities/plaja.jpg","../assets/images/activities/canoe.jpg","../assets/images/activities/explorat.jpg","../assets/images/activities/pescuit.jpg","../assets/images/activities/calarit.jpg","../assets/images/activities/descoperit.jpg"],s),A.a(["PLAJA","CANOE","EXPLORAT","PESCUIT","CALARIT","DESCOPERIT"],s),B.k)}}
+return new A.H5(new A.NP(new A.b2(new A.ae($.aa,t.dX),t.Fe)),[!1,!1,!1,!1,!1,!1,!1],[!0,!1,!1,!1,!1,!1,!1],A.a(["assets/images/plaja.jpg","assets/images/canoe.jpg","assets/images/explorat.jpg","assets/images/pescuit.jpg","assets/images/calarit.jpg","assets/images/descoperit.jpg"],s),A.a(["PLAJA","CANOE","EXPLORAT","PESCUIT","CALARIT","DESCOPERIT"],s),B.k)}}
 A.H5.prototype={
 HI(a){var s=this.x,r=A.af(s).i("aC<1,kN>")
 return A.aq(new A.aC(s,new A.a1T(),r),!0,r.i("bg.E"))},
