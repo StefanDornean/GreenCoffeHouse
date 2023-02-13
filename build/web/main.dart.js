@@ -33843,7 +33843,7 @@ m=new A.qg(m,0,new A.R(4281629772),!0,new A.x9(p,p,1/0,56),p)}else m=new A.ue(ne
 k=A.bt(p,50,p)
 r=t.s
 q=t.D
-return new A.uH(!0,m,A.ac3(A.e_(A.a([k,new A.cu(new A.aw(s,50,s,50),A.ch(p,A.kK(A.cl("\xce\u021bi oferim condi\u021bii excelente de cazare, \xee\u021bi recomand\u0103m cei mai ospitalieri localnici, cele mai gustoase preparate pesc\u0103re\u0219ti \u0219i diverse modalit\u0103\u021bi personalizate de petrecere a timpului liber, toate pentru a te ajuta s\u0103 tr\u0103ie\u0219ti farmecul de alt\u0103dat\u0103 al acestui ora\u0219 unic \xeen lume.",A.c7(p,p,B.l,p,p,p,p,p,"Montserrat",p,p,a.N(o).f.a.a<800?11:25,p,p,p,p,p,!0,p,p,p,p,p,p,p,p),B.cN,p),p,p),p,p,p,p,p,p),p),A.bt(p,25,p),A.ch(p,A.rO("../assets/images/background.jpg",B.cY,p),p,p,p,p,p,p),new A.An(n,p),new A.r4(p),A.e_(A.a([A.ch(p,A.e_(A.a([new A.Bg(n,p),new A.Bh(n,A.a(["","",""],r),A.a(["","",""],r),A.a(["assets/images/trekking.jpg","assets/images/animals.jpg","assets/images/photography.jpeg"],r),A.a(["Weekend","Zile lucratoare","Sarbatori"],r),p)],q),B.F,B.C,B.G),p,p,p,p,p,p)],q),B.F,B.C,B.G),A.bt(p,l/10,p),new A.z4(p)],q),B.F,B.C,B.G),this.d,new A.qK(p),B.bq),new A.Bc(p),p)}}
+return new A.uH(!0,m,A.ac3(A.e_(A.a([k,new A.cu(new A.aw(s,50,s,50),A.ch(p,A.kK(A.cl("\xce\u021bi oferim condi\u021bii excelente de cazare, \xee\u021bi recomand\u0103m cei mai ospitalieri localnici, cele mai gustoase preparate pesc\u0103re\u0219ti \u0219i diverse modalit\u0103\u021bi personalizate de petrecere a timpului liber, toate pentru a te ajuta s\u0103 tr\u0103ie\u0219ti farmecul de alt\u0103dat\u0103 al acestui ora\u0219 unic \xeen lume.",A.c7(p,p,B.l,p,p,p,p,p,"Montserrat",p,p,a.N(o).f.a.a<800?11:25,p,p,p,p,p,!0,p,p,p,p,p,p,p,p),B.cN,p),p,p),p,p,p,p,p,p),p),A.bt(p,25,p),A.ch(p,A.rO("assets/images/background.jpg",B.cY,p),p,p,p,p,p,p),new A.An(n,p),new A.r4(p),A.e_(A.a([A.ch(p,A.e_(A.a([new A.Bg(n,p),new A.Bh(n,A.a(["","",""],r),A.a(["","",""],r),A.a(["assets/images/trekking.jpg","assets/images/animals.jpg","assets/images/photography.jpeg"],r),A.a(["Weekend","Zile lucratoare","Sarbatori"],r),p)],q),B.F,B.C,B.G),p,p,p,p,p,p)],q),B.F,B.C,B.G),A.bt(p,l/10,p),new A.z4(p)],q),B.F,B.C,B.G),this.d,new A.qK(p),B.bq),new A.Bc(p),p)}}
 A.a2p.prototype={
 $0(){var s=this.a,r=B.b.gbL(s.d.d).as
 r.toString
@@ -33946,7 +33946,7 @@ return A.hF(A.a([A.cl(this.c+": ",A.c7(s,s,B.c5,s,s,s,s,s,s,s,s,16,s,s,s,s,s,!0,
 A.vK.prototype={
 ae(){return new A.KU([!1,!1,!1,!1,!1,!1,!1,!1],B.k)}}
 A.KU.prototype={
-I(a){var s,r,q,p,o,n=this,m=null,l=a.N(t.w).f,k=A.bt(m,m,25),j=A.rO("../assets/images/logo.png",m,40),i=A.bt(m,10,m),h=n.d,g=A.cl("Home",A.c7(m,m,h[0]?B.b2:B.h,m,m,m,m,m,m,m,m,m,m,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m),f=A.bt(m,5,m),e=h[0],d=t.D
+I(a){var s,r,q,p,o,n=this,m=null,l=a.N(t.w).f,k=A.bt(m,m,25),j=A.rO("assets/images/logo.png",m,40),i=A.bt(m,10,m),h=n.d,g=A.cl("Home",A.c7(m,m,h[0]?B.b2:B.h,m,m,m,m,m,m,m,m,m,m,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m),f=A.bt(m,5,m),e=h[0],d=t.D
 e=A.ik(!1,!0,A.e_(A.a([i,g,f,A.a0L(A.ch(m,m,B.h,m,2,m,m,20),!0,!0,!0,e)],d),B.F,B.C,B.bc),m,!0,m,m,m,m,m,m,m,new A.a4G(n),m,new A.a4H(),m,m,m,m)
 f=A.bt(m,m,25)
 g=A.bt(m,10,m)

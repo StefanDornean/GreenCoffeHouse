@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25),
             Container(
               child: Image.asset(
-                '../assets/images/background.jpg',
+                'assets/images/background.jpg',
                 fit: BoxFit.cover,
               ),
             ),

@@ -36,7 +36,7 @@ class _TopBarContentsState extends State<TopBarContents> {
             children: [
               SizedBox(width: 25),
               Image.asset(
-                '../assets/images/logo.png',
+                'assets/images/logo.png',
                 height: 40,
               ),
               Expanded(
