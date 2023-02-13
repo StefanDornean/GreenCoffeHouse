@@ -1,0 +1,9 @@
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/icudtl.dat
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/flutter_windows.dll
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Amestec/WebAppAmestec/amestec_web_app/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
