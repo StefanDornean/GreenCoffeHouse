@@ -18,12 +18,12 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
   int _current = 0;
 
   final List<String> images = [
-    '../assets/images/activities/plaja.jpg',
-    '../assets/images/activities/canoe.jpg',
-    '../assets/images/activities/explorat.jpg',
-    '../assets/images/activities/pescuit.jpg',
-    '../assets/images/activities/calarit.jpg',
-    '../assets/images/activities/descoperit.jpg',
+    'assets/images/plaja.jpg',
+    'assets/images/canoe.jpg',
+    'assets/images/explorat.jpg',
+    'assets/images/pescuit.jpg',
+    'assets/images/calarit.jpg',
+    'assets/images/descoperit.jpg',
   ];
 
   final List<String> places = [

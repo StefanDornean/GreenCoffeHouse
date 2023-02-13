@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Color(0xFF347C4C),
               elevation: 0,
               title: Image.asset(
-                '../assets/images/logo.png',
+                'assets/images/logo.png',
                 height: 40,
               ),
               centerTitle: true,
