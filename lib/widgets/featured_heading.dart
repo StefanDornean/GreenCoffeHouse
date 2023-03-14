@@ -13,52 +13,38 @@ class FeaturedHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: screenSize.height * 0.06,
-        left: screenSize.width / 15,
-        right: screenSize.width / 15,
+        left: ResponsiveWidget.isSmallScreen(context)
+            ? screenSize.width * 0.12
+            : screenSize.width / 15,
       ),
-      child: ResponsiveWidget.isSmallScreen(context)
-          ? Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Row(),
-                Text(
-                  'Oferte',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  'Profita acum de oferta noastra',
-                  textAlign: TextAlign.end,
-                ),
-                SizedBox(height: 10),
-              ],
-            )
-          : Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  'Oferte',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    'Profita acum de oferta noastra',
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ],
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Oferte',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            SizedBox(height: 20),
+            Text(
+              'GreenCoffeeHouse din Delta Dunării oferă camere confortabile și spațioase, cu decor modern și facilități complete. \nCamerele noastre au vedere la piscină sau la grădina interioară, creând un cadru perfect pentru relaxare și odihnă.',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 14,
+                fontFamily: 'Montserrat',
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

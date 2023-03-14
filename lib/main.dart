@@ -1,6 +1,5 @@
+import 'package:explore/screens/root_app.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,12 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GreenCoffeeHouse',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
+        title: 'GreenCoffeeHouse',
+        theme: ThemeData(
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: RootApp());
   }
 }

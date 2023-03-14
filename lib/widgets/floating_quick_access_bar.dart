@@ -1,7 +1,9 @@
+import 'dart:async';
+
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
-
-import '../mywidgets/count_down.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FloatingQuickAccessBar extends StatefulWidget {
   const FloatingQuickAccessBar({
@@ -16,98 +18,213 @@ class FloatingQuickAccessBar extends StatefulWidget {
 }
 
 class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
-  List _isHovering = [false, false, false, false];
-  List<Widget> rowElements = [];
-
-  List<String> items = ['Au mai ramas', 'Dates', 'People', 'Experience'];
-  List<IconData> icons = [
-    Icons.location_on,
-    Icons.date_range,
-    Icons.people,
-    Icons.wb_sunny
-  ];
-
-  List<Widget> generateRowElements() {
-    rowElements.clear();
-    Widget elementTile = InkWell(
-        child: Row(
-      children: [
-        Text("Au mai ramas  "),
-        CountDownTimer(
-          secondsRemaining: 3600 * 24,
-          whenTimeExpires: () {
-            setState(() {
-              // hasTimerStopped = true;
-            });
-          },
-          countDownTimerStyle: TextStyle(
-            color: Color(0XFFf5a623),
-            fontSize: 17.0,
-            height: 1.2,
-          ),
-        ),
-      ],
-    ));
-    Widget spacer = SizedBox(
-      height: widget.screenSize.height / 20,
-      child: VerticalDivider(
-        width: 1,
-        color: Colors.blueGrey[100],
-        thickness: 1,
-      ),
-    );
-    rowElements.add(elementTile);
-
-    return rowElements;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
       heightFactor: 1,
       child: Padding(
         padding: EdgeInsets.only(
-          top: widget.screenSize.height * 0.40,
+          top: widget.screenSize.height *
+              (ResponsiveWidget.isSmallScreen(context) ? 0.35 : 0.40),
           left: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
-              : widget.screenSize.width / 5,
+              : widget.screenSize.width / 12,
           right: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
-              : widget.screenSize.width / 5,
+              : widget.screenSize.width / 13,
         ),
         child: ResponsiveWidget.isSmallScreen(context)
             ? Column(
                 children: [
-                  ...Iterable<int>.generate(items.length).map(
-                    (int pageIndex) => Padding(
-                      padding:
-                          EdgeInsets.only(top: widget.screenSize.height / 80),
-                      child: Card(
-                        elevation: 4,
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: widget.screenSize.height / 80),
+                    child: Card(
+                      elevation: 4,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: widget.screenSize.height / 45,
+                            bottom: widget.screenSize.height / 45),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Facilitati',
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontFamily: 'Miller Disp',
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                          ),
+                                          child: Icon(
+                                            Icons.wifi,
+                                            size: 20,
+                                            color: Colors.green,
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Wi-Fi",
+                                          style: TextStyle(fontSize: 12),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                        width: widget.screenSize.width / 15),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                          ),
+                                          child: Icon(
+                                            Icons.ac_unit_rounded,
+                                            size: 20,
+                                            color: Color.fromARGB(
+                                                255, 50, 141, 164),
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "AC",
+                                          style: TextStyle(fontSize: 12),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                        width: widget.screenSize.width / 15),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                          ),
+                                          child: Icon(
+                                            Icons.local_parking_rounded,
+                                            size: 20,
+                                            color: Color.fromARGB(
+                                                255, 214, 170, 49),
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Parcare",
+                                          style: TextStyle(fontSize: 12),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                        width: widget.screenSize.width / 15),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                          ),
+                                          child: Icon(
+                                            Icons.fastfood_rounded,
+                                            size: 20,
+                                            color: Color.fromARGB(
+                                                255, 220, 81, 71),
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "Mancare",
+                                          style: TextStyle(fontSize: 12),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: widget.screenSize.height / 80),
+                    child: Card(
+                      elevation: 4,
+                      child: InkWell(
+                        onTap: () async {
+                          await launchUrl(
+                            Uri.parse(
+                                'https://www.booking.com/hotel/ro/green-coffee-house.en-gb.html'),
+                            webOnlyWindowName: '_blank',
+                          );
+                        },
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: widget.screenSize.height / 45,
-                              bottom: widget.screenSize.height / 45,
-                              left: widget.screenSize.width / 20),
-                          child: Row(
-                            children: [
-                              Icon(
-                                icons[pageIndex],
-                                color: Colors.blueGrey,
-                              ),
-                              SizedBox(width: widget.screenSize.width / 20),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                onTap: () {},
-                                child: Text(
-                                  items[pageIndex],
-                                  style: TextStyle(
-                                      color: Colors.blueGrey, fontSize: 16),
-                                ),
-                              ),
-                            ],
+                            top: widget.screenSize.height / 55,
                           ),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Booking rating',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontFamily: 'Miller Disp',
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(width: 30),
+                                    Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            ' 9.2 ',
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          SizedBox(height: 8),
+                                          Text(
+                                            '46 Evaluari',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ]),
                         ),
                       ),
                     ),
@@ -115,15 +232,188 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                 ],
               )
             : Card(
-                elevation: 5,
+                elevation: 1,
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: widget.screenSize.height / 50,
                     bottom: widget.screenSize.height / 50,
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: generateRowElements(),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Facilitati',
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              fontFamily: 'Miller Disp',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 30),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(50.0),
+                                    ),
+                                    child: Icon(
+                                      Icons.wifi,
+                                      size: 20,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text("Wi-Fi")
+                                ],
+                              ),
+                              SizedBox(width: 25),
+                              Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(50.0),
+                                    ),
+                                    child: Icon(
+                                      Icons.beach_access_rounded,
+                                      size: 20,
+                                      color: Color.fromARGB(255, 50, 141, 164),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text("Acces Plaja")
+                                ],
+                              ),
+                              SizedBox(width: 25),
+                              Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(50.0),
+                                    ),
+                                    child: Icon(
+                                      Icons.local_parking_rounded,
+                                      size: 20,
+                                      color: Color.fromARGB(255, 214, 170, 49),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text("Parcare")
+                                ],
+                              ),
+                              SizedBox(width: 25),
+                              Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(50.0),
+                                    ),
+                                    child: Icon(
+                                      Icons.fastfood_rounded,
+                                      size: 20,
+                                      color: Color.fromARGB(255, 220, 81, 71),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text("Mancare")
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(width: widget.screenSize.width / 15),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Booking rating',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: 'Miller Disp',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(width: 30),
+                          InkWell(
+                            onTap: () async {
+                              await launchUrl(
+                                Uri.parse(
+                                    'https://www.booking.com/hotel/ro/green-coffee-house.en-gb.html'),
+                                webOnlyWindowName: '_blank',
+                              );
+                            },
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      ' 9.2 ',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(height: 8),
+                                    Text(
+                                      '46 Evaluari',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: widget.screenSize.width / 15),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Stele',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: 'Miller Disp',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 35),
+                          RatingBar.builder(
+                            initialRating: 3,
+                            minRating: 1,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 3,
+                            itemSize: 30.0,
+                            itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (ratingValue) {
+                              setState(() {});
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),

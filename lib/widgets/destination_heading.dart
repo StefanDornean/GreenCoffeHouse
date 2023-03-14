@@ -11,38 +11,44 @@ class DestinationHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isSmallScreen(context)
-        ? Container(
-            padding: EdgeInsets.only(
-              top: screenSize.height / 20,
-              bottom: screenSize.height / 20,
-            ),
-            width: screenSize.width,
-            child: Text(
+    return Padding(
+      padding: EdgeInsets.only(
+        left: ResponsiveWidget.isSmallScreen(context)
+            ? screenSize.width * 0.12
+            : screenSize.width / 15,
+      ),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(width: 20),
+            Text(
               'Activitati',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: 24,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,
               ),
             ),
-          )
-        : Container(
-            padding: EdgeInsets.only(
-              top: screenSize.height / 10,
-              bottom: screenSize.height / 15,
-            ),
-            width: screenSize.width,
-            child: Text(
-              'Activitati',
-              textAlign: TextAlign.center,
+            SizedBox(height: 20),
+            Text(
+              'Delta Dunării oferă o varietate de activități în aer liber, cum ar fi pescuitul, canotajul, drumețiile și observarea păsărilor. \nO modalitate excelentă de a explora zona și de a vă relaxa.',
+              textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: 40,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 14,
                 fontFamily: 'Montserrat',
-                fontWeight: FontWeight.bold,
               ),
             ),
-          );
+            SizedBox(width: 30),
+          ],
+        ),
+      ),
+    );
+
+    // ResponsiveWidget.isSmallScreen(context)
   }
 }
