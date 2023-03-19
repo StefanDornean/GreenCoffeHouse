@@ -16,6 +16,9 @@ class DestinationHeading extends StatelessWidget {
         left: ResponsiveWidget.isSmallScreen(context)
             ? screenSize.width * 0.12
             : screenSize.width / 15,
+        right: ResponsiveWidget.isSmallScreen(context)
+            ? screenSize.width * 0.12
+            : screenSize.width / 15,
       ),
       child: Align(
         alignment: Alignment.centerLeft,
@@ -26,7 +29,7 @@ class DestinationHeading extends StatelessWidget {
           children: [
             SizedBox(width: 20),
             Text(
-              'Activitati',
+              'Activități',
               textAlign: TextAlign.start,
               style: TextStyle(
                 fontSize: ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
@@ -36,7 +39,7 @@ class DestinationHeading extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Delta Dunării oferă o varietate de activități în aer liber, cum ar fi pescuitul, canotajul, drumețiile și observarea păsărilor. \nO modalitate excelentă de a explora zona și de a vă relaxa.',
+              'Delta Dunării oferă o varietate de activități în aer liber, cum ar fi pescuitul, canotajul, drumețiile și observarea păsărilor. O modalitate excelentă de a explora zona și de a vă relaxa.',
               textAlign: TextAlign.start,
               style: TextStyle(
                 fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 14,

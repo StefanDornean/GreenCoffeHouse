@@ -35,10 +35,10 @@ class FeaturedHeading extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'GreenCoffeeHouse din Delta Dunării oferă camere confortabile și spațioase, cu decor modern și facilități complete. \nCamerele noastre au vedere la piscină sau la grădina interioară, creând un cadru perfect pentru relaxare și odihnă.',
+              'GreenCoffeeHouse din Delta Dunării oferă camere confortabile și spațioase, cu decor modern și facilități complete. Camerele noastre crează un cadru perfect pentru relaxare și odihnă.',
               textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 14,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 12 : 14,
                 fontFamily: 'Montserrat',
               ),
             ),

@@ -34,37 +34,6 @@ class _Activities extends State<Activities> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Activitati pe apa',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Montserrat',
-                          fontSize:
-                              ResponsiveWidget.isSmallScreen(context) ? 14 : 20,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Alaturati-va noua intr-o experienta de neuitat\n in Delta Dunarii. Va propunem sa petreceti o zi pe apa, \npescuind, facand canotaj sau inotand.',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: ResponsiveWidget.isSmallScreen(context)
-                              ? 10
-                              : 14.0,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ]),
-              ),
               SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -184,7 +153,7 @@ class _Activities extends State<Activities> {
           )
         ],
       ),
-      SizedBox(height: 55),
+      SizedBox(height: 20),
       Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -194,36 +163,6 @@ class _Activities extends State<Activities> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Activitati pe uscat',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 14 : 20,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Daca preferati sa petreceti mai mult timp pe uscat, \nva invitam sa explorati imprejurimile calarind. \nDe asemenea, va puteti relaxa la resortul nostru \nsavurand preparate delicioase la restaurant.',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 10 : 14.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(height: 5),
               Row(
                 //mainAxisAlignment: MainAxisAlignment.start,

@@ -1,4 +1,4 @@
-import 'package:explore/screens/tickets_page.dart';
+import 'package:explore/screens/details_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/responsive.dart';
@@ -44,7 +44,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     },
     {
       "title": "Contact",
-      "page": TicketsPage(),
+      "page": DetailsPage(),
     },
   ];
 
@@ -155,22 +155,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                       onPageChanged(2);
                     },
                     child: Text(
-                      'Oferta',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: Divider(
-                      color: Colors.blueGrey.shade400,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      onPageChanged(3);
-                    },
-                    child: Text(
                       'Contact',
                       style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
@@ -203,8 +187,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   }
 
   Widget getTopBar() {
-    final List _isHovering = [false, false, false, false];
-    List _isActive = [true, false, false, false, false];
+    final List _isHovering = [false, false, false];
+    List _isActive = [true, false, false, false];
 
     return Container(
       color: Colors.white,
@@ -230,7 +214,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     },
                     onTap: () {
                       setState(() {
-                        _isActive = [true, false, false, false, false];
+                        _isActive = [true, false, false, false];
                       });
                       onPageChanged(0);
                     },
@@ -279,7 +263,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     },
                     onTap: () {
                       setState(() {
-                        _isActive = [false, true, false, false, false];
+                        _isActive = [false, true, false, false];
                       });
                       onPageChanged(1);
                     },
@@ -323,12 +307,12 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                   InkWell(
                     onHover: (value) {
                       setState(() {
-                        value ? _isHovering[2] = true : _isHovering[2] = false;
+                        value ? _isHovering[2] = true : _isHovering[3] = false;
                       });
                     },
                     onTap: () {
-                      _isActive = [false, false, true, false, false];
-                      onPageChanged(2);
+                      _isActive = [false, false, true, false];
+                      onPageChanged(3);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -343,7 +327,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                                 : null,
                           ),
                           child: Text(
-                            'Oferta',
+                            'Contact',
                             style: TextStyle(
                               color: _isHovering[2]
                                   ? Colors.blue.shade200
@@ -357,53 +341,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                           maintainState: true,
                           maintainSize: true,
                           visible: _isHovering[2],
-                          child: Container(
-                            height: 2,
-                            width: 20,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 25),
-                  InkWell(
-                    onHover: (value) {
-                      setState(() {
-                        value ? _isHovering[3] = true : _isHovering[3] = false;
-                      });
-                    },
-                    onTap: () {
-                      _isActive = [false, false, false, true, false];
-                      onPageChanged(3);
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(height: 10),
-                        DecoratedBox(
-                          decoration: BoxDecoration(
-                            border: _isActive[3]
-                                ? Border(
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black))
-                                : null,
-                          ),
-                          child: Text(
-                            'Contact',
-                            style: TextStyle(
-                              color: _isHovering[3]
-                                  ? Colors.blue.shade200
-                                  : Colors.black,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Visibility(
-                          maintainAnimation: true,
-                          maintainState: true,
-                          maintainSize: true,
-                          visible: _isHovering[3],
                           child: Container(
                             height: 2,
                             width: 20,

@@ -9,10 +9,6 @@ class FeaturedTiles extends StatelessWidget {
 
   final Size screenSize;
 
-  final List<String> titles = ['', ''];
-
-  final List<String> text = ['', ''];
-
   final List<String> assets = [
     'assets/images/dubla.jpg',
     'assets/images/twin.jpg',
@@ -83,14 +79,16 @@ class FeaturedTiles extends StatelessWidget {
                                     fontFamily: 'Montserrat',
                                   ),
                                 ),
+                                Text(
+                                  '* mic dejun inclus',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
-                          // SizedBox(
-                          //     width: screenSize.width /
-                          //         (ResponsiveWidget.isSmallScreen(context)
-                          //             ? 3
-                          //             : 9)),
                           SizedBox(width: 15),
                           Container(
                             padding: EdgeInsets.all(5),
@@ -98,16 +96,16 @@ class FeaturedTiles extends StatelessWidget {
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(50.0),
                             ),
-                            child: Icon(
-                              Icons.arrow_right_alt_rounded,
-                              size: 20,
-                              color: Colors.grey[200],
+                            child: Text(
+                              ' 550 lei ',
+                              style: TextStyle(
+                                  color: Colors.grey[200], fontSize: 16),
                             ),
                           ),
                           SizedBox(width: 5),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 5),
                     ]),
                   ),
                 ),
@@ -166,6 +164,13 @@ class FeaturedTiles extends StatelessWidget {
                                     fontFamily: 'Montserrat',
                                   ),
                                 ),
+                                Text(
+                                  '* mic dejun inclus',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -176,16 +181,16 @@ class FeaturedTiles extends StatelessWidget {
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(50.0),
                             ),
-                            child: Icon(
-                              Icons.arrow_right_alt_rounded,
-                              size: 20,
-                              color: Colors.grey[200],
+                            child: Text(
+                              ' 550 lei ',
+                              style: TextStyle(
+                                  color: Colors.grey[200], fontSize: 16),
                             ),
                           ),
                           SizedBox(width: 5),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 5),
                     ]),
                   ),
                 ),

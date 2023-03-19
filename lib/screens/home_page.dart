@@ -1,10 +1,8 @@
 import 'package:explore/widgets/activities.dart';
-import 'package:explore/widgets/bottom_bar_column.dart';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/bottom_bar.dart';
-import '../widgets/carousel.dart';
 import '../widgets/destination_heading.dart';
 import '../widgets/featured_heading.dart';
 import '../widgets/featured_tiles.dart';
@@ -67,14 +65,15 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: const EdgeInsets.only(right: 20, left: 20),
               child: SizedBox(
-                height: screenSize.height * 0.45,
+                height: screenSize.height *
+                    (ResponsiveWidget.isSmallScreen(context) ? 0.45 : 0.65),
                 width: screenSize.width,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(13),
                   child: Image.asset(
                       ResponsiveWidget.isSmallScreen(context)
-                          ? 'assets/images/bg_phone_1.jpg'
-                          : 'assets/images/bg_web_2.jpg',
+                          ? 'assets/images/bg_phone_4.jpg'
+                          : 'assets/images/bg_web_3.jpg',
                       fit: BoxFit.cover),
                 ),
               ),
@@ -82,44 +81,43 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(
                 top: screenSize.height *
-                    (ResponsiveWidget.isSmallScreen(context) ? 0.15 : 0.10),
+                    (ResponsiveWidget.isSmallScreen(context) ? 0.02 : 0.10),
                 left: ResponsiveWidget.isSmallScreen(context)
-                    ? screenSize.width * 0.12
-                    : screenSize.width / 15,
+                    ? screenSize.width / 1.7
+                    : screenSize.width / 1.7,
                 right: ResponsiveWidget.isSmallScreen(context)
-                    ? screenSize.width / 12
-                    : screenSize.width / 5,
+                    ? screenSize.width * 0.10
+                    : screenSize.width / 15,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Align(
-                    alignment: Alignment.bottomLeft,
+                    alignment: Alignment.bottomRight,
                     child: Text(
-                      'Unde relaxarea \nIntalneste aventura',
-                      textAlign: TextAlign.left,
+                      'Unde relaxarea întâlnește aventura',
+                      textAlign: TextAlign.right,
                       style: TextStyle(
-                        fontFamily: 'Miller Disp',
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 20 : 32.0,
+                            ResponsiveWidget.isSmallScreen(context) ? 16 : 32.0,
                         color: Colors.black,
                       ),
                     ),
                   ),
                   SizedBox(
                       height:
-                          ResponsiveWidget.isSmallScreen(context) ? 30 : 30),
+                          ResponsiveWidget.isSmallScreen(context) ? 20 : 30),
                   Align(
-                    alignment: Alignment.bottomLeft,
+                    alignment: Alignment.bottomRight,
                     child: Text(
-                      ResponsiveWidget.isSmallScreen(context)
-                          ? 'Uitați de voi și acceptați invitația noastră la\no ceașcă aromată de cafea, la o vorbă bună,\nla momente de relaxare și liniște'
-                          : 'Uitați de voi și acceptați invitația noastră la o ceașcă aromată de cafea,\nla o vorbă bună, la momente de relaxare și liniște',
-                      textAlign: TextAlign.left,
+                      'Uitați de voi și acceptați invitația noastră la o ceașcă aromată de cafea, la o vorbă bună, la momente de relaxare și liniște.',
+                      textAlign: TextAlign.right,
                       style: TextStyle(
-                        fontFamily: 'Miller Disp',
+                        fontFamily: 'Montserrat',
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 10 : 14.0,
+                            ResponsiveWidget.isSmallScreen(context) ? 12 : 14.0,
                         color: Colors.black,
                       ),
                     ),
@@ -156,7 +154,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 SizedBox(height: 30),
                 DestinationHeading(screenSize: screenSize),
-                SizedBox(height: 25),
+                SizedBox(height: 15),
                 Activities(),
                 SizedBox(height: 30),
                 BottomBar()

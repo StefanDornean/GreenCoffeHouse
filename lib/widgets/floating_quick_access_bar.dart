@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:explore/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'info_text.dart';
 
 class FloatingQuickAccessBar extends StatefulWidget {
   const FloatingQuickAccessBar({
@@ -25,13 +28,13 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
       child: Padding(
         padding: EdgeInsets.only(
           top: widget.screenSize.height *
-              (ResponsiveWidget.isSmallScreen(context) ? 0.35 : 0.40),
+              (ResponsiveWidget.isSmallScreen(context) ? 0.35 : 0.55),
           left: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
-              : widget.screenSize.width / 12,
+              : widget.screenSize.width / 15,
           right: ResponsiveWidget.isSmallScreen(context)
               ? widget.screenSize.width / 12
-              : widget.screenSize.width / 13,
+              : widget.screenSize.width / 16,
         ),
         child: ResponsiveWidget.isSmallScreen(context)
             ? Column(
@@ -52,10 +55,10 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Facilitati',
+                                  'Facilități',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
-                                    fontFamily: 'Miller Disp',
+                                    fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -67,9 +70,13 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                         Container(
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[200],
+                                            border: Border.all(
+                                              color: Color.fromARGB(
+                                                  255, 221, 221, 221),
+                                              width: 3,
+                                            ),
                                             borderRadius:
-                                                BorderRadius.circular(50.0),
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Icon(
                                             Icons.wifi,
@@ -91,12 +98,16 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                         Container(
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[200],
+                                            border: Border.all(
+                                              color: Color.fromARGB(
+                                                  255, 221, 221, 221),
+                                              width: 3,
+                                            ),
                                             borderRadius:
-                                                BorderRadius.circular(50.0),
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Icon(
-                                            Icons.ac_unit_rounded,
+                                            Icons.beach_access_rounded,
                                             size: 20,
                                             color: Color.fromARGB(
                                                 255, 50, 141, 164),
@@ -104,9 +115,9 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                         ),
                                         SizedBox(height: 5),
                                         Text(
-                                          "AC",
+                                          "Acces Plajă",
                                           style: TextStyle(fontSize: 12),
-                                        )
+                                        ),
                                       ],
                                     ),
                                     SizedBox(
@@ -116,9 +127,13 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                         Container(
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[200],
+                                            border: Border.all(
+                                              color: Color.fromARGB(
+                                                  255, 221, 221, 221),
+                                              width: 3,
+                                            ),
                                             borderRadius:
-                                                BorderRadius.circular(50.0),
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Icon(
                                             Icons.local_parking_rounded,
@@ -141,20 +156,24 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                         Container(
                                           padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[200],
+                                            border: Border.all(
+                                              color: Color.fromARGB(
+                                                  255, 221, 221, 221),
+                                              width: 3,
+                                            ),
                                             borderRadius:
-                                                BorderRadius.circular(50.0),
+                                                BorderRadius.circular(10.0),
                                           ),
-                                          child: Icon(
-                                            Icons.fastfood_rounded,
-                                            size: 20,
+                                          child: FaIcon(
+                                            FontAwesomeIcons.utensils,
+                                            size: 20.0,
                                             color: Color.fromARGB(
                                                 255, 220, 81, 71),
                                           ),
                                         ),
                                         SizedBox(height: 5),
                                         Text(
-                                          "Mancare",
+                                          "Mâncare",
                                           style: TextStyle(fontSize: 12),
                                         )
                                       ],
@@ -195,7 +214,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                       'Booking rating',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontFamily: 'Miller Disp',
+                                        fontFamily: 'Montserrat',
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -229,10 +248,104 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: widget.screenSize.height / 80),
+                    child: Card(
+                      elevation: 5,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () async {
+                                  await launchUrl(
+                                    Uri.parse(
+                                        'https://www.facebook.com/GreenCoffeeHouseSulina/'),
+                                    webOnlyWindowName: '_blank',
+                                  );
+                                },
+                                icon: FaIcon(
+                                  FontAwesomeIcons.facebook,
+                                  size: 30.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () async {
+                                  await launchUrl(
+                                    Uri.parse(
+                                        'https://www.facebook.com/GreenCoffeeHouseSulina/'),
+                                    webOnlyWindowName: '_blank',
+                                  );
+                                },
+                                icon: FaIcon(
+                                  FontAwesomeIcons.mapLocationDot,
+                                  size: 30.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.envelope,
+                                size: 16.0,
+                                color: Colors.black,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(
+                                child: Text(
+                                  'info@greencoffeehouse.ro',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.phone,
+                                size: 16.0,
+                                color: Colors.black,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(
+                                child: Text(
+                                  '+40 751 111 230',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               )
             : Card(
-                elevation: 1,
+                elevation: 5,
                 child: Padding(
                   padding: EdgeInsets.only(
                     top: widget.screenSize.height / 50,
@@ -245,10 +358,10 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Facilitati',
+                            'Facilități',
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                              fontFamily: 'Miller Disp',
+                              fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -260,8 +373,12 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                   Container(
                                     padding: EdgeInsets.all(10),
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(50.0),
+                                      border: Border.all(
+                                        color:
+                                            Color.fromARGB(255, 221, 221, 221),
+                                        width: 3,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Icon(
                                       Icons.wifi,
@@ -279,8 +396,12 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                   Container(
                                     padding: EdgeInsets.all(10),
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(50.0),
+                                      border: Border.all(
+                                        color:
+                                            Color.fromARGB(255, 221, 221, 221),
+                                        width: 3,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Icon(
                                       Icons.beach_access_rounded,
@@ -289,7 +410,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                     ),
                                   ),
                                   SizedBox(height: 10),
-                                  Text("Acces Plaja")
+                                  Text("Acces Plajă")
                                 ],
                               ),
                               SizedBox(width: 25),
@@ -298,8 +419,12 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                   Container(
                                     padding: EdgeInsets.all(10),
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(50.0),
+                                      border: Border.all(
+                                        color:
+                                            Color.fromARGB(255, 221, 221, 221),
+                                        width: 3,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Icon(
                                       Icons.local_parking_rounded,
@@ -317,36 +442,42 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                   Container(
                                     padding: EdgeInsets.all(10),
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(50.0),
+                                      //color: Colors.grey[200],
+                                      border: Border.all(
+                                        color:
+                                            Color.fromARGB(255, 221, 221, 221),
+                                        width: 3,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    child: Icon(
-                                      Icons.fastfood_rounded,
-                                      size: 20,
+                                    child: FaIcon(
+                                      FontAwesomeIcons.utensils,
+                                      size: 20.0,
                                       color: Color.fromARGB(255, 220, 81, 71),
                                     ),
                                   ),
                                   SizedBox(height: 10),
-                                  Text("Mancare")
+                                  Text("Mâncare")
                                 ],
                               )
                             ],
                           )
                         ],
                       ),
-                      SizedBox(width: widget.screenSize.width / 15),
+                      SizedBox(width: widget.screenSize.width / 17),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          SizedBox(height: 10),
                           Text(
                             'Booking rating',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontFamily: 'Miller Disp',
+                              fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 30),
+                          SizedBox(height: 10),
                           InkWell(
                             onTap: () async {
                               await launchUrl(
@@ -356,6 +487,11 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               );
                             },
                             child: Card(
+                              elevation: 5,
+                              margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 16.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Column(
@@ -369,7 +505,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                     ),
                                     SizedBox(height: 8),
                                     Text(
-                                      '46 Evaluari',
+                                      '49 Evaluari',
                                       style: TextStyle(
                                         fontSize: 16,
                                         color: Colors.grey,
@@ -382,34 +518,100 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                           ),
                         ],
                       ),
-                      SizedBox(width: widget.screenSize.width / 15),
+                      SizedBox(width: widget.screenSize.width / 17),
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            'Stele',
-                            textAlign: TextAlign.left,
+                            'Contact',
+                            textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontFamily: 'Miller Disp',
+                              fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 35),
-                          RatingBar.builder(
-                            initialRating: 3,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 3,
-                            itemSize: 30.0,
-                            itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                            itemBuilder: (context, _) => Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                            ),
-                            onRatingUpdate: (ratingValue) {
-                              setState(() {});
-                            },
+                          SizedBox(height: 10),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: () async {
+                                  await launchUrl(
+                                    Uri.parse(
+                                        'https://www.facebook.com/GreenCoffeeHouseSulina/'),
+                                    webOnlyWindowName: '_blank',
+                                  );
+                                },
+                                icon: FaIcon(
+                                  FontAwesomeIcons.facebook,
+                                  size: 30.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              SizedBox(width: 20),
+                              IconButton(
+                                onPressed: () async {
+                                  await launchUrl(
+                                    Uri.parse(
+                                        'https://goo.gl/maps/jarKtKPs6XD4Yer28'),
+                                    webOnlyWindowName: '_blank',
+                                  );
+                                },
+                                icon: FaIcon(
+                                  FontAwesomeIcons.mapLocationDot,
+                                  size: 30.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.envelope,
+                                size: 16.0,
+                                color: Colors.black,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(
+                                child: Text(
+                                  'info@greencoffeehouse.ro',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.phone,
+                                size: 16.0,
+                                color: Colors.black,
+                              ),
+                              SizedBox(width: 5),
+                              Flexible(
+                                child: Text(
+                                  '+40 751 111 230',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       ),
