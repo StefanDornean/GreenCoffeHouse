@@ -30,20 +30,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     },
     {
       "title": "Despre noi",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Explore"),
-      ),
-    },
-    {
-      "title": "Oferta",
-      "page": Container(
-        alignment: Alignment.center,
-        child: Text("Nearby"),
-      ),
-    },
-    {
-      "title": "Contact",
       "page": DetailsPage(),
     },
   ];
@@ -148,15 +134,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                     child: Divider(
                       color: Colors.blueGrey.shade400,
                       thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      onPageChanged(2);
-                    },
-                    child: Text(
-                      'Contact',
-                      style: TextStyle(color: Colors.white, fontSize: 22),
                     ),
                   ),
                   Expanded(
@@ -294,53 +271,6 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                           maintainState: true,
                           maintainSize: true,
                           visible: _isHovering[1],
-                          child: Container(
-                            height: 2,
-                            width: 20,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 25),
-                  InkWell(
-                    onHover: (value) {
-                      setState(() {
-                        value ? _isHovering[2] = true : _isHovering[3] = false;
-                      });
-                    },
-                    onTap: () {
-                      _isActive = [false, false, true, false];
-                      onPageChanged(3);
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(height: 10),
-                        DecoratedBox(
-                          decoration: BoxDecoration(
-                            border: _isActive[2]
-                                ? Border(
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black))
-                                : null,
-                          ),
-                          child: Text(
-                            'Contact',
-                            style: TextStyle(
-                              color: _isHovering[2]
-                                  ? Colors.blue.shade200
-                                  : Colors.black,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Visibility(
-                          maintainAnimation: true,
-                          maintainState: true,
-                          maintainSize: true,
-                          visible: _isHovering[2],
                           child: Container(
                             height: 2,
                             width: 20,

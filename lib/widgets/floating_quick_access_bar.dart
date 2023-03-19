@@ -279,7 +279,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                 onPressed: () async {
                                   await launchUrl(
                                     Uri.parse(
-                                        'https://www.facebook.com/GreenCoffeeHouseSulina/'),
+                                        'https://goo.gl/maps/jarKtKPs6XD4Yer28'),
                                     webOnlyWindowName: '_blank',
                                   );
                                 },
@@ -304,7 +304,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               ),
                               SizedBox(width: 5),
                               Flexible(
-                                child: Text(
+                                child: SelectableText(
                                   'info@greencoffeehouse.ro',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -327,7 +327,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               ),
                               SizedBox(width: 5),
                               Flexible(
-                                child: Text(
+                                child: SelectableText(
                                   '+40 751 111 230',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -580,7 +580,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               ),
                               SizedBox(width: 5),
                               Flexible(
-                                child: Text(
+                                child: SelectableText(
                                   'info@greencoffeehouse.ro',
                                   style: TextStyle(
                                     color: Colors.black,
@@ -603,7 +603,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                               ),
                               SizedBox(width: 5),
                               Flexible(
-                                child: Text(
+                                child: SelectableText(
                                   '+40 751 111 230',
                                   style: TextStyle(
                                     color: Colors.black,

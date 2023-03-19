@@ -16,25 +16,38 @@ class _DetailsPageState extends State<DetailsPage> {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(
-          top: screenSize.height *
-              (ResponsiveWidget.isSmallScreen(context) ? 0.02 : 0.10),
-          left: ResponsiveWidget.isSmallScreen(context)
-              ? screenSize.width / 1.7
-              : screenSize.width / 1.7,
-          right: ResponsiveWidget.isSmallScreen(context)
-              ? screenSize.width * 0.10
-              : screenSize.width / 15,
-        ),
+        padding: EdgeInsets.only(right: 20, left: 20),
         child: Column(
           children: [
             Row(
               children: [
-                Column()
+                // Text('Despre noi'),
+                // Wrap(
+                //   direction: Axis.horizontal,
+                //   children: [
+                //     Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text('Column 1 line 1'),
+                //         Text('Column 1 line 2'),
+                //         Text('Column 1 line 3'),
+                //         // add more Text widgets as needed
+                //       ],
+                //     ),
+                //     Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text('Column 2 line 1'),
+                //         Text('Column 2 line 2'),
+                //         Text('Column 2 line 3'),
+                //         // add more Text widgets as needed
+                //       ],
+                //     ),
+                //   ],
+                // ),
               ],
             ),
             SizedBox(height: 20),
-            
           ],
         ),
       ),
