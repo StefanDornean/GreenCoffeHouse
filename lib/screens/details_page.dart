@@ -56,42 +56,42 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                   SizedBox(height: 50),
-                  Text(
-                    'Galerie foto',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontSize:
-                          ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: GridView.builder(
-                        itemCount: picturesList.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount:
-                                (ResponsiveWidget.isSmallScreen(context)
-                                    ? 2
-                                    : 4)),
-                        itemBuilder: (context, index) {
-                          return Card(
-                              margin: EdgeInsets.all(8),
-                              child: InkWell(
-                                //onTap: onTap,
-                                child: Image.network(
-                                  picturesList[index],
-                                  fit: BoxFit.cover,
-                                ),
-                              ));
-                        },
-                      ),
-                    ),
-                  )
+                  // Text(
+                  //   'Galerie foto',
+                  //   textAlign: TextAlign.start,
+                  //   style: TextStyle(
+                  //     fontSize:
+                  //         ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
+                  //     fontFamily: 'Montserrat',
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
+                  // AspectRatio(
+                  //   aspectRatio: 1,
+                  //   child: SizedBox(
+                  //     width: double.infinity,
+                  //     child: GridView.builder(
+                  //       itemCount: picturesList.length,
+                  //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //           crossAxisCount:
+                  //               (ResponsiveWidget.isSmallScreen(context)
+                  //                   ? 2
+                  //                   : 4)),
+                  //       itemBuilder: (context, index) {
+                  //         return Card(
+                  //             margin: EdgeInsets.all(8),
+                  //             child: InkWell(
+                  //               //onTap: onTap,
+                  //               child: Image.network(
+                  //                 picturesList[index],
+                  //                 fit: BoxFit.cover,
+                  //               ),
+                  //             ));
+                  //       },
+                  //     ),
+                  //   ),
+                  // )
                 ],
               ),
             ),
