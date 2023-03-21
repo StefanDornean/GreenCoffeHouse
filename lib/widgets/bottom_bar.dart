@@ -23,7 +23,7 @@ class BottomBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Copyright © 2020 | GreenCoffeHouse',
+            'Copyright © 2023 | GreenCoffeHouse',
             style: TextStyle(
               color: Colors.blueGrey.shade300,
               fontSize: 14,

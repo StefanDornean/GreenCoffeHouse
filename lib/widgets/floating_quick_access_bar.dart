@@ -232,7 +232,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                           ),
                                           SizedBox(height: 8),
                                           Text(
-                                            '46 Evaluari',
+                                            '49 Evaluari',
                                             style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.grey,
@@ -352,7 +352,9 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                     bottom: widget.screenSize.height / 50,
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -464,7 +466,6 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                           )
                         ],
                       ),
-                      SizedBox(width: widget.screenSize.width / 17),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -518,7 +519,6 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                           ),
                         ],
                       ),
-                      SizedBox(width: widget.screenSize.width / 17),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,

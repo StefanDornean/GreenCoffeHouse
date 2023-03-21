@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
 import '../widgets/responsive.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -15,41 +16,87 @@ class _DetailsPageState extends State<DetailsPage> {
     var screenSize = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.only(right: 20, left: 20),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                // Text('Despre noi'),
-                // Wrap(
-                //   direction: Axis.horizontal,
-                //   children: [
-                //     Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text('Column 1 line 1'),
-                //         Text('Column 1 line 2'),
-                //         Text('Column 1 line 3'),
-                //         // add more Text widgets as needed
-                //       ],
-                //     ),
-                //     Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text('Column 2 line 1'),
-                //         Text('Column 2 line 2'),
-                //         Text('Column 2 line 3'),
-                //         // add more Text widgets as needed
-                //       ],
-                //     ),
-                //   ],
-                // ),
-              ],
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: 10,
+              left: ResponsiveWidget.isSmallScreen(context)
+                  ? screenSize.width * 0.12
+                  : screenSize.width / 15,
+              right: ResponsiveWidget.isSmallScreen(context)
+                  ? screenSize.width * 0.12
+                  : screenSize.width / 15,
             ),
-            SizedBox(height: 20),
-          ],
-        ),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Despre noi',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize:
+                          ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    detailsText,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize:
+                          ResponsiveWidget.isSmallScreen(context) ? 14 : 20,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  Text(
+                    'Galerie foto',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize:
+                          ResponsiveWidget.isSmallScreen(context) ? 24 : 40,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  AspectRatio(
+                    aspectRatio: 1,
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: GridView.builder(
+                        itemCount: picturesList.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount:
+                                (ResponsiveWidget.isSmallScreen(context)
+                                    ? 2
+                                    : 4)),
+                        itemBuilder: (context, index) {
+                          return Card(
+                              margin: EdgeInsets.all(8),
+                              child: InkWell(
+                                //onTap: onTap,
+                                child: Image.network(
+                                  picturesList[index],
+                                  fit: BoxFit.cover,
+                                ),
+                              ));
+                        },
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -120,7 +120,7 @@ class _Activities extends State<Activities> {
                           top: screenSize.height / 70,
                         ),
                         child: Text(
-                          'Inot',
+                          'Înot',
                           style: TextStyle(
                             fontSize: 14,
                             fontFamily: 'Montserrat',
@@ -175,7 +175,7 @@ class _Activities extends State<Activities> {
                           top: screenSize.height / 70,
                         ),
                         child: Text(
-                          'Plaja',
+                          'Plajă',
                           style: TextStyle(
                             fontSize: 14,
                             fontFamily: 'Montserrat',
@@ -212,7 +212,7 @@ class _Activities extends State<Activities> {
                           top: screenSize.height / 70,
                         ),
                         child: Text(
-                          'Calarit',
+                          'Călărit',
                           style: TextStyle(
                             fontSize: 14,
                             fontFamily: 'Montserrat',

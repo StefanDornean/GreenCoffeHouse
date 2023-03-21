@@ -16,6 +16,9 @@ class FeaturedHeading extends StatelessWidget {
         left: ResponsiveWidget.isSmallScreen(context)
             ? screenSize.width * 0.12
             : screenSize.width / 15,
+        right: ResponsiveWidget.isSmallScreen(context)
+            ? screenSize.width * 0.12
+            : screenSize.width / 15,
       ),
       child: Align(
         alignment: Alignment.centerLeft,
@@ -38,7 +41,7 @@ class FeaturedHeading extends StatelessWidget {
               'GreenCoffeeHouse din Delta Dunării oferă camere confortabile și spațioase, cu decor modern și facilități complete. Camerele noastre crează un cadru perfect pentru relaxare și odihnă.',
               textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 12 : 14,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 14 : 20,
                 fontFamily: 'Montserrat',
               ),
             ),

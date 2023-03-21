@@ -42,7 +42,7 @@ class DestinationHeading extends StatelessWidget {
               'Delta Dunării oferă o varietate de activități în aer liber, cum ar fi pescuitul, canotajul, drumețiile și observarea păsărilor. O modalitate excelentă de a explora zona și de a vă relaxa.',
               textAlign: TextAlign.start,
               style: TextStyle(
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 10 : 14,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 14 : 20,
                 fontFamily: 'Montserrat',
               ),
             ),

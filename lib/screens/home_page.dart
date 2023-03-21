@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 12 : 14.0,
+                            ResponsiveWidget.isSmallScreen(context) ? 12 : 20,
                         color: Colors.black,
                       ),
                     ),
