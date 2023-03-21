@@ -232,7 +232,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                           ),
                                           SizedBox(height: 8),
                                           Text(
-                                            '49 Evaluari',
+                                            '49 Evaluări',
                                             style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.grey,
@@ -506,7 +506,7 @@ class _FloatingQuickAccessBarState extends State<FloatingQuickAccessBar> {
                                     ),
                                     SizedBox(height: 8),
                                     Text(
-                                      '49 Evaluari',
+                                      '49 Evaluări',
                                       style: TextStyle(
                                         fontSize: 16,
                                         color: Colors.grey,
