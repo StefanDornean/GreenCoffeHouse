@@ -38191,7 +38191,7 @@ return A.ahW(A.cU(A.a([c,k,l,A.bb(A.a([m,A.Y(A.kf(o,A.m0(A.bb(A.a([e,p,A.cU(A.a(
 A.uy.prototype={
 am(){return new A.LX(B.l)}}
 A.LX.prototype={
-L(a7){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=null,e="Facilit\u0103\u021bi",d="Montserrat",c="Acces Plaj\u0103",b="Booking rating",a="49 Evaluari",a0="info@greencoffeehouse.ro",a1="+40 751 111 230",a2=g.a.c,a3=t.w,a4=a7.E(a3).f.a.a<800?0.35:0.55,a5=a7.E(a3).f,a6=g.a
+L(a7){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=null,e="Facilit\u0103\u021bi",d="Montserrat",c="Acces Plaj\u0103",b="Booking rating",a="49 Evalu\u0103ri",a0="info@greencoffeehouse.ro",a1="+40 751 111 230",a2=g.a.c,a3=t.w,a4=a7.E(a3).f.a.a<800?0.35:0.55,a5=a7.E(a3).f,a6=g.a
 a5=a5.a.a<800?a6.c.a/12:a6.c.a/15
 a6=a7.E(a3).f
 s=g.a
